@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salary Manager</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gidole&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+      
+    <div class="container">
+        <div class="container">
+            <h2>Позиції</h2>
+            <div>
+                <input class="position-name" placeholder="Позиція">
+                <button onclick="createJobPosition()">Додати позицію</button>
+            </div>
+            <table class="positions-table">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Видалити</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="main-table">
+            <h2>Залежності</h2>
+                З
+                <select class="from-position"></select>
+                Рівня: <input class="from-level" type="number" min="1" max="4" value="1">
+                До: 
+                <select class="to-position"></select>
+                Рівня: <input class="to-level" type="number" min="1" max="4" value="1">
+                <br>
+                ЗП: <input class="formula-salary" value="S">
+                Бонус: <input class="formula-bonus" value="B">
+                <button onclick="createPositionDependency(); updateResultsTable()">Додати залежність</button>
+            
+        </div>
+    </div>
+    <div class="main-table">
+        <button onclick="updateResultsTable()">Update</button>
+        <div class="results-table"></div>
+    </div>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
